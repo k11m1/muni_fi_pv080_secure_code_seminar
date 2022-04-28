@@ -3,7 +3,7 @@
 import subprocess
 import base64
 import flask
-        import sys
+import sys
 
 # Input injection
 def transcode_file(request, filename):
@@ -15,7 +15,7 @@ def transcode_file(request, filename):
 # Assert statements
 def fun_asserts(request, user):
     if (user.is_admin == False):
-        sys.exit("Assert failed\n");
+    sys.exit("Assert failed\n")
     # secure code...
 
 
