@@ -13,7 +13,10 @@ def transcode_file(request, filename):
 
 # Assert statements
 def fun_asserts(request, user):
-    assert user.is_admin, 'user does not have access'
+    if (user.is_admin == False):
+        import sys
+        sys.stderr.write("Assert failed\n")
+        exit(1)
     # secure code...
 
 
