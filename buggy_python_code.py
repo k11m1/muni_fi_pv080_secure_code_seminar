@@ -15,7 +15,7 @@ def transcode_file(request, filename):
 # Assert statements
 def fun_asserts(request, user):
     if (user.is_admin == False):
-    sys.exit("Assert failed\n")
+        sys.exit("Assert failed\n")
     # secure code...
 
 
@@ -25,9 +25,11 @@ class RunBinSh(object):
         return (subprocess.Popen, (('/bin/sh',),))
 
 def import_urlib_version(version):
-    if (version != "2" or version != "3" or version != 2 or version != 3):
-        sys.exit("Not a valid urlib version\n");
-    exec("import urllib%s as urllib" % version)
+    if (version == "2" or version == 2):
+        import urllib as urllib
+    if (version == "3" or verison == 3):
+        # sys.exit("Not a valid urlib version\n");
+        import urllib3 as urllib
 
 @app.route('/')
 def index():
